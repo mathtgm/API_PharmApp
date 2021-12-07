@@ -1,0 +1,35 @@
+const { Router } = require('express');
+const router = Router();
+
+const controller = require('./controllers/index.controllers')
+
+router.post('/farmacias', controller.getFarmacias)
+router.get('/usuarioLogin', controller.getUserLogin)
+router.post('/farmacia/produtos', controller.getListaProdutos)
+router.post('/farmacia/farmaceutico', controller.getFarmaceutico)
+router.post('/farmaciaLogin', controller.getFarmaciaLogin)
+router.get('/usuario/carrinho/pedidoSequencia', controller.getPedidoSequencia)
+router.post('/usuario/carrinho/ordemPedido', controller.postPedidoOrdem)
+router.post('/usuario/carrinho/ordemProduto', controller.postPedidoProduto)
+router.post('/usuario/pedido/ordemPedido', controller.getListaOrdemPedidosUsuario)
+router.post('/usuario/pedido/ordemProduto', controller.getListaOrdemProdutoUsuario)
+router.post('/usuario/pedido/ordemPedido/entregue', controller.confirmaEntrega)
+router.post('/farmacia/pedidoDisponivel', controller.pedidoDisponivel)
+router.post('/farmacia/pedido/ordemPedido/alterarStatus', controller.alterarStatus)
+router.post('/farmacia/pedido/ordemPedido/cancelarMotivo', controller.cancelarMotivo)
+router.post('/farmacia/produtos/alterar', controller.alterarProduto)
+router.post('/farmacia/produtos/excluir', controller.excluirProduto)
+router.post('/farmacia/produtos/cadastrar', controller.cadastrarProduto)
+router.post('/farmacia/pedido/ordemPedido', controller.getPedidoOrdem)
+router.post('/usuario/cadastrar', controller.cadastrarUsuario)
+router.post('/usuario/atualizar', controller.atualizarUser)
+router.post('/usuario', controller.getUser)
+router.post('/farmacia/cadastrar', controller.cadastrarFarmacia)
+router.post('/farmacia', controller.getFarmacia)
+router.post('/farmacia/atualizar', controller.atualizarFarmacia)
+router.post('/farmacia/farmaceutico/atualizar', controller.atualizarFarmaceutico)
+router.post('/farmacia/farmaceutico/cadastrar', controller.cadastrarFarmaceutico)
+router.post('/farmacia/farmaceutico/excluir', controller.excluirFarmaceutico)
+router.post('/farmacia/status', controller.statusFarmacia)
+
+module.exports = router;
